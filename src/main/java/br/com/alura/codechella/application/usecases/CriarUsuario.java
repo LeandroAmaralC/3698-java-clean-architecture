@@ -1,4 +1,18 @@
 package br.com.alura.codechella.application.usecases;
 
-public class CadastrarUsuario {
+
+import br.com.alura.codechella.application.gateways.RepositorioDeUsuario;
+import br.com.alura.codechella.domain.entites.usuario.Usuario;
+
+public class CriarUsuario {
+
+    private final RepositorioDeUsuario repositorio;
+
+    public CriarUsuario(RepositorioDeUsuario repositorio) {
+        this.repositorio = repositorio;
+    }
+
+    public Usuario cadastrarUsuario(Usuario usuario) {
+        return repositorio.cadastrarUsuario(usuario);
+    }
 }
